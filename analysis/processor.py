@@ -38,5 +38,15 @@ async def process_request(user_prompt: str, df: pd.DataFrame) -> str:
     """Run the analysis for one request and return the LLM answer."""
     aggregates = compute_aggregates(df)
     prompt = build_prompt(user_prompt, df, aggregates)
+    await savepromttofile(prompt, "latest_prompt.txt")
     logger.info("Sending request to Ollama (prompt %d chars)", len(prompt))
+
     return await ollama_client.generate(prompt)
+
+
+async def savepromttofile(prompt: str, filename: str) -> None:
+    """Save the given prompt to a file asynchronously."""
+    import aiofiles
+
+    async with aiofiles.open(filename, "w") as f:
+        await f.write(prompt)

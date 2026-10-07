@@ -10,7 +10,7 @@ OLLAMA_URL: str = os.getenv("OLLAMA_URL", "http://localhost:11434")
 OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "phi3")
 GOOGLE_SHEETS_CSV_URL: str = os.getenv("GOOGLE_SHEETS_CSV_URL", "")
 
-OLLAMA_TIMEOUT: int = int(os.getenv("OLLAMA_TIMEOUT", "300"))
+OLLAMA_TIMEOUT: int = int(os.getenv("OLLAMA_TIMEOUT", "3000"))
 MAX_TELEGRAM_MESSAGE_LENGTH: int = 4096
 MAX_ROWS_FOR_LLM: int = int(os.getenv("MAX_ROWS_FOR_LLM", "5000"))
 # Hard cap on characters of raw table data placed in the prompt.
