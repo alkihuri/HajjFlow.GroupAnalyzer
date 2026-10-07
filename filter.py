@@ -1,7 +1,7 @@
 """User authorization: whitelist of Telegram user IDs."""
 
 ALLOWED_USER_IDS: list[int] = [
-    123456789,
+    32644812,
     987654321,
 ]
 
